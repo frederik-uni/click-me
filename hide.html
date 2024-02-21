@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+  <button id="hide" style="position: absolute">Click Me</button>
+  </body>
+</html>
+
+<script>
+  function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+  }
+
+  const btn_width = 68;
+  const btn_height = 21;
+
+  var btn = document.querySelector("#hide");
+  btn.style.left = Math.floor((window.innerWidth - btn_width) / 2) + "px";
+  btn.style.top = Math.floor((window.innerHeight - btn_height) / 2) + "px";
+  btn.addEventListener("mouseover", function() {
+    btn.style.left = getRndInteger(0,window.innerWidth - btn_width) + "px";
+    btn.style.top = getRndInteger(0, window.innerHeight - btn_height) + "px";
+  });
+</script>
